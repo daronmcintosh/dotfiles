@@ -60,7 +60,6 @@ install_asdf() {
 }
 
 main() {
-  # this is called like curl FILE_URL | bash
   install_packages
   install_ohmyzsh
   setup_dotfiles
