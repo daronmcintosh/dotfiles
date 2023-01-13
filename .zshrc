@@ -35,6 +35,7 @@ plugins=(
   git
   gh
   zsh-autosuggestions
+  fzf
   # fast-syntax-highlighting
   docker
   kubectl
