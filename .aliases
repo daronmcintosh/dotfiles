@@ -1,9 +1,20 @@
 # https://github.com/golang/go/issues/40364#issuecomment-663092806
 alias go-list-direct-deps-updates="go list -f '{{if not .Indirect}}{{.}}{{end}}' -u -m all"
-# alias ls="exa --icons -lh"
-# alias cat='batcat --paging=never'
-# alias grep='rg'
+alias ls="exa --icons -lh"
+alias cat='batcat --paging=never'
 alias df='duf'
-# alias find='fdfind'
 alias ipv6='curl -6 icanhazip.com'
 alias ipv4='curl -4 icanhazip.com'
+alias k9s='EDITOR=nano k9s'
+
+export DOTFILES_DIR="$HOME/.dotfiles"
+alias dotfiles="git --work-tree=$HOME --git-dir=$DOTFILES_DIR"
+# TODO: report untracked changes on initial start?
+# dotfiles status
+# dotfiles add <file(s)>
+# dotfiles commit -m "changes"
+# dotfiles push
+
+# TODO: need to get use to using the following
+# alias grep='rg'
+# alias find='fdfind'

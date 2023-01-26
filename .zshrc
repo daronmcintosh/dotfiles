@@ -5,18 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-DOTFILES_DIR="$HOME/.dotfiles"
-# alias dotfiles="git --work-tree=$HOME --git-dir=$DOTFILES_DIR"
-# TODO: report untracked changes on initial start?
-# dotfiles status
-# dotfiles add <file(s)>
-# dotfiles commit -m "changes"
-# dotfiles push
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="code --wait"
 export DOCKER_BUILDKIT=1
+export TERM=xterm-256color
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -65,6 +58,8 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' users root $USER
 zstyle ':completion:*:*:git:*' script ~/.completions/git-completion.bash
 autoload -Uz compinit && compinit -i
+
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
