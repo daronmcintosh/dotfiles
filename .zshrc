@@ -42,6 +42,7 @@ plugins=(
 
 # plugin settings that has to be defined before oh my zsh is sourced
 # export ZSH_TMUX_AUTOSTART="true"
+export FZF_BASE=$HOME/.fzf
 export DISABLE_FZF_KEY_BINDINGS="false"
 
 source $ZSH/oh-my-zsh.sh
