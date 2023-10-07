@@ -18,3 +18,4 @@ alias dotfiles="git --work-tree=$HOME --git-dir=$DOTFILES_DIR"
 # TODO: need to get use to using the following
 # alias grep='rg'
 # alias find='fdfind'
+
