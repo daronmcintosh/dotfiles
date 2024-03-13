@@ -52,6 +52,8 @@ if [ -f $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
 
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
 # completion stuff
 zstyle ':completion:*' menu yes select
 zstyle ':completion::complete:*' use-cache 1 # enables completion caching
