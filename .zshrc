@@ -7,7 +7,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR="code --wait"
+export EDITOR="nvim"
 export DOCKER_BUILDKIT=1
 export TERM=xterm-256color
 
@@ -52,7 +52,7 @@ if [ -f $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim/bin"
 
 # completion stuff
 zstyle ':completion:*' menu yes select
