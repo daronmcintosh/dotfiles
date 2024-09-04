@@ -1,6 +1,6 @@
 # https://github.com/golang/go/issues/40364#issuecomment-663092806
 alias go-list-direct-deps-updates="go list -f '{{if not .Indirect}}{{.}}{{end}}' -u -m all"
-alias ls="exa --icons -lh"
+alias ls="eza --icons -lh"
 alias cat='bat --paging=never'
 alias df='duf'
 alias ipv6='curl -6 icanhazip.com'
