@@ -9,7 +9,6 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 export DOCKER_BUILDKIT=1
-export TERM=xterm-256color
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -52,7 +51,11 @@ if [ -f $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
 
-export PATH="$PATH:/opt/nvim/bin"
+# export PATH="$PATH:/opt/nvim/bin"
+if [[ ! "$PATH" =~ :$HOME/.local/nvim/bin: ]]; then
+  export PATH="$PATH:$HOME/.local/nvim/bin"
+fi
+
 
 # completion stuff
 zstyle ':completion:*' menu yes select
