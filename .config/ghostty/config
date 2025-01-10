@@ -1,0 +1,3 @@
+theme = Dracula
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+font-family = JetBrainsMono Nerd Font
