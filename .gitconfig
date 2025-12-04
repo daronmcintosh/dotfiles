@@ -4,5 +4,6 @@ email = mcintoshdaron@gmail.com
 [core]
 autocrlf = input
 editor = nvim
+excludesFile = ~/.gitignore
 [init]
 defaultBranch = main
