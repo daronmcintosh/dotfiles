@@ -62,7 +62,6 @@ zstyle ':completion:*' menu yes select
 zstyle ':completion::complete:*' use-cache 1 # enables completion caching
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' users root $USER
-zstyle ':completion:*:*:git:*' script ~/.completions/git-completion.bash
 autoload -Uz compinit && compinit -i
 
 eval "$(zoxide init zsh)"
