@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Create a new git worktree with a new branch
+# Takes short name, auto-prefixes with repo name
 
 set -e
 
@@ -17,15 +18,32 @@ if ! git rev-parse --git-dir > /dev/null 2>&1; then
 fi
 
 # Check arguments
-if [ $# -ne 2 ]; then
-    echo "Usage: $0 <path> <branch>"
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <short-name>"
     echo ""
-    echo "Example: $0 ../feature-x feature-x"
+    echo "Example: $0 fix-gh-trigger-k8s"
+    echo "  Creates: ../reponame-fix-gh-trigger-k8s"
     exit 1
 fi
 
-path="$1"
-branch="$2"
+short_name="$1"
+
+# Auto-detect repo prefix from git remote URL
+repo_prefix=""
+if git remote get-url origin > /dev/null 2>&1; then
+    remote_url=$(git remote get-url origin)
+    # Extract repo name from URL (handles both SSH and HTTPS)
+    repo_prefix=$(echo "$remote_url" | sed -E 's#.*/([^/]+)(\.git)?$#\1#' | sed 's/\.git$//')
+fi
+
+# Fallback to current directory name if remote not found
+if [ -z "$repo_prefix" ]; then
+    repo_prefix=$(basename "$(git rev-parse --show-toplevel)")
+fi
+
+# Construct full names
+branch="${repo_prefix}-${short_name}"
+path="../${branch}"
 
 # Check if path already exists
 if [ -e "$path" ]; then
