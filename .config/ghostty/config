@@ -7,3 +7,5 @@ keybind = global:ctrl+grave_accent=toggle_quick_terminal
 keybind = super+r=reload_config
 
 window-save-state = always
+shell-integration-features = ssh-env,ssh-terminfo
+
