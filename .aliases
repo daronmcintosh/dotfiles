@@ -1,6 +1,10 @@
 # https://github.com/golang/go/issues/40364#issuecomment-663092806
 alias go-list-direct-deps-updates="go list -f '{{if not .Indirect}}{{.}}{{end}}' -u -m all"
 alias ls="eza --icons -lh"
+# ubuntu/debian installs bat as batcat
+if ! command -v bat >/dev/null && command -v batcat >/dev/null; then
+  alias bat='batcat'
+fi
 alias cat='bat --paging=never'
 alias df='duf'
 alias ipv6='curl -6 icanhazip.com'
