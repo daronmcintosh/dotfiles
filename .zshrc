@@ -56,6 +56,11 @@ if [[ ! "$PATH" =~ :$HOME/.local/nvim/bin: ]]; then
   export PATH="$PATH:$HOME/.local/nvim/bin"
 fi
 
+# mise installs to ~/.local/bin on linux; prepend so `mise activate` below works
+if [[ ! "$PATH" =~ ^$HOME/.local/bin: ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 
 # completion stuff
 zstyle ':completion:*' menu yes select
