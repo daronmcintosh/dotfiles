@@ -36,7 +36,7 @@ plugins=(
   node
   tmux
   golang
-  asdf
+  asdf # TODO: remove once mise is proven
 )
 
 # plugin settings that has to be defined before oh my zsh is sourced
@@ -65,6 +65,7 @@ zstyle ':completion:*' users root $USER
 autoload -Uz compinit && compinit -i
 
 eval "$(zoxide init zsh)"
+eval "$(mise activate zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
