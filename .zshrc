@@ -36,7 +36,6 @@ plugins=(
   node
   tmux
   golang
-  asdf # TODO: remove once mise is proven
 )
 
 # plugin settings that has to be defined before oh my zsh is sourced
