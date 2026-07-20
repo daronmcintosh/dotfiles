@@ -1,19 +1,33 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = true
+palette = 'tokyo_night'
 
 format = """
 $os$directory$git_branch$git_status$fill$status$cmd_duration$time
 $character"""
 
+[palettes.tokyo_night]
+bg = '#1a1b26'
+fg = '#c0caf5'
+dim = '#565f89'
+blue = '#7aa2f7'
+cyan = '#7dcfff'
+green = '#9ece6a'
+purple = '#bb9af7'
+red = '#f7768e'
+orange = '#ff9e64'
+yellow = '#e0af68'
+teal = '#1abc9c'
+
 [fill]
 symbol = '─'
-style = 'bright-black'
+style = 'dim'
 
 [os]
 disabled = false
 format = '[$symbol]($style) '
-style = 'bold white'
+style = 'bold purple'
 
 [os.symbols]
 Macos = ''
@@ -22,19 +36,20 @@ Ubuntu = ''
 Debian = ''
 
 [directory]
-style = 'bold cyan'
+style = 'bold blue'
 truncation_length = 2
 truncate_to_repo = false
 truncation_symbol = '…/'
 read_only = ' 󰌾'
+read_only_style = 'red'
 
 [git_branch]
 symbol = ' '
 format = '[$symbol$branch]($style) '
-style = 'bold green'
+style = 'bold purple'
 
 [git_status]
-style = 'bold green'
+style = 'bold yellow'
 format = '([\[$all_status$ahead_behind\]]($style) )'
 conflicted = '~${count}'
 ahead = '⇡${count}'
@@ -57,13 +72,13 @@ map_symbol = false
 [cmd_duration]
 min_time = 2000
 format = '[󰔟 $duration]($style) '
-style = 'yellow'
+style = 'orange'
 
 [time]
 disabled = false
 time_format = '%I:%M:%S %p'
 format = '[󰥔 $time]($style)'
-style = 'bold #5f8787'
+style = 'bold cyan'
 
 [character]
 success_symbol = '[❯](bold green)'
